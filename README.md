@@ -1,17 +1,18 @@
-# Hypernova Micro-Frontends
+# React APP Rewired Micro-Frontend
+## Header APP
 
 ## Quickstart
 
-```sh
-sh setup.sh
-cd hypernova-aggregator
-yarn buildAll
-yarn runAll
 ```
+npm i
+To Start: npm start
+Navigate to `http://localhost:5000` to run the header-micro-frontend independently to test in local
+```
+```
+To build and host it on 5000: sh Run.sh
+JS file: `http://localhost:5000/static/js/main.js`
+CSS File: `http://localhost:5000/static/css/main.css`
 
-This will start the following processes:
-- hypernova-server-react on port `3031`
-- hypernova-server-vue on port `3030`
-- hypernova-aggregator on port `8080`
-
-Navigate to http://localhost:8080 to see the micro-frontends running through Hypernova
+You can integrate `.js` and `.css` file to Aggregator UI
+```
+You can upload the `main.js` and `main.css` in AWS S3 or any CDN
