@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import App from './App';
 import initializeStore from "store/index";
 import * as serviceWorker from './serviceWorker';
+import env from "env.config";
 import 'bootstrap-daterangepicker';
 import 'styles/style.css';
 import 'admin-lte/dist/css/AdminLTE.css';
@@ -17,6 +18,6 @@ ReactDOM.render(
     <Provider store={initializeStore()}>
         <App />
     </Provider>
-    , document.getElementById('app'));
+    , document.getElementById(`${env.APP_NAME}`));
 
 serviceWorker.unregister();

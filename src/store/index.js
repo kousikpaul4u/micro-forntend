@@ -7,7 +7,7 @@ import env from "env.config.js";
 
 function initializeStore() {
     let store = "";
-    if (env.ENABLE_LOGGING) {
+    if (env && env.ENABLE_LOGGING) {
         store = createStore(
             rootReducer,
             applyMiddleware(logger, thunk)
