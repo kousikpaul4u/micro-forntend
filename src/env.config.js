@@ -2,7 +2,10 @@ import $ from "jquery";
 
 const LOCAL_ENV = {
     APP_NAME: "todo_header_app",
-    ENABLE_LOGGING: true
+    ENABLE_LOGGING: true,
+    CONNECTED_APP: {
+        TODO_SIGNUP_APP: "todo_signup_app"
+    }
     // <Put all your local configs>
 };
 

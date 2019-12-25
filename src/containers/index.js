@@ -17,17 +17,22 @@ const mapStateToProps = state => {
 
 function HeaderApp(props) {
 
-    useEffect(() => {
-    }, []);
+    const [userName, setUserName] = useState("");
 
-    function search(page = 1, isPageRequest = false) {
-        window[env.APP_NAME]["message"] = "";
+    function onEvent({ detail }) {
+        setUserName(detail.userName);
+        console.log("Detail: ", detail);
     }
+
+    useEffect(() => {
+        window.addEventListener(`${env.CONNECTED_APP.TODO_SIGNUP_APP}_set_username`, onEvent);
+        return () => window.removeEventListener(`${env.CONNECTED_APP.TODO_SIGNUP_APP}_set_username`)
+    }, []);
 
     return (
         <div>
             <div className="todo-form-header">
-                <h1>Header</h1>
+                <h1>Hello: {userName}</h1>
             </div>
         </div>
     )
