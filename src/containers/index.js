@@ -3,40 +3,35 @@ import { connect } from "react-redux";
 import { search } from "actions/index";
 import env from "env.config";
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        search: (input) => dispatch(search(input)),
-    };
-};
-
-const mapStateToProps = state => {
-    return {
-        message: state.common && state.common.message ? state.common.message : ""
-    };
-};
-
 function HeaderApp(props) {
 
     const [userName, setUserName] = useState("");
+    const [dob, setDob] = useState("");
 
     function onEvent({ detail }) {
         setUserName(detail.userName);
-        console.log("Detail: ", detail);
+        setDob(detail.dob)
     }
 
     useEffect(() => {
-        window.addEventListener(`${env.CONNECTED_APP.TODO_SIGNUP_APP}_set_username`, onEvent);
-        return () => window.removeEventListener(`${env.CONNECTED_APP.TODO_SIGNUP_APP}_set_username`)
+        window.addEventListener(`${env.CONNECTED_APP.TODO_SIGNUP_APP}_set_signup_details`, onEvent);
+        return () => window.removeEventListener(`${env.CONNECTED_APP.TODO_SIGNUP_APP}_set_signup_details`)
     }, []);
 
     return (
         <div>
             <div className="todo-form-header">
-                <h1>Hello: {userName}</h1>
+                <h1>
+                    {
+                        userName ?
+                            <span>Hello: {userName} and your DOB is: {dob}</span>
+                            : null
+                    }
+                </h1>
             </div>
         </div>
     )
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HeaderApp);
+export default HeaderApp;
