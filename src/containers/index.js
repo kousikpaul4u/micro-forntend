@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { connect } from "react-redux";
-import { search } from "actions/index";
 import env from "env.config";
 
 function HeaderApp(props) {
@@ -22,9 +20,10 @@ function HeaderApp(props) {
         <div>
             <div className="todo-form-header">
                 <h1>
+                    Hello:
                     {
                         userName ?
-                            <span>Hello: {userName} and your DOB is: {dob}</span>
+                            <span> {userName} and your DOB is: {dob}</span>
                             : null
                     }
                 </h1>

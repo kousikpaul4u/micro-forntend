@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from "react-redux";
 import App from './App';
-import initializeStore from "store/index";
 import * as serviceWorker from './serviceWorker';
 import env from "env.config";
 import 'bootstrap-daterangepicker';
@@ -15,9 +13,7 @@ import $ from "jquery";
 window.jQuery = window.$ = $;
 
 ReactDOM.render(
-    <Provider store={initializeStore()}>
-        <App />
-    </Provider>
+    <App />
     , document.getElementById(`${env.APP_NAME}`));
 
 serviceWorker.unregister();
