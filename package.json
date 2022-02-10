@@ -48,7 +48,7 @@
   ],
   "devDependencies": {
     "css-loader": "^0.28.4",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "react-app-rewire-css-modules": "github:codebandits/react-app-rewire-css-modules",
     "react-app-rewire-css-modules-extensionless": "^1.2.0",
     "react-app-rewired": "^2.1.5",
